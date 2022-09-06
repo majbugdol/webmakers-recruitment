@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { WeatherInformationComponent } from '../weather-information/weather-information.component';
 
-interface ICoordinates {
-  lon: number;
+export interface ICoordinates {
+  lat: number;
   lng: number;
 }
 @Injectable({
@@ -11,19 +11,19 @@ interface ICoordinates {
 })
 export class OpenWeatherService {
   public state: ICoordinates = {
-    lon: 0,
+    lat: 0,
     lng: 0,
   };
 
   constructor(public matDialog: MatDialog) {}
 
-  openDialog(lon: number, lng: number) {
+  openDialog(lat: number, lng: number) {
     this.matDialog.open(WeatherInformationComponent, {
       height: '400px',
       width: '600px',
     });
 
-    this.state.lon = lon;
+    this.state.lat = lat;
     this.state.lng = lng;
     console.log(this.state);
   }

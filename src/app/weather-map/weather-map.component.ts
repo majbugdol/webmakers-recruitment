@@ -2,7 +2,6 @@ import { MapsAPILoader } from '@agm/core';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { OpenWeatherService } from '../services/open-weather.service';
-import { WeatherInformationComponent } from '../weather-information/weather-information.component';
 
 @Component({
   selector: 'app-weather-map',

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
-import { OpenWeatherService } from '../services/open-weather.service';
+import {
+  ICoordinates,
+  OpenWeatherService,
+} from '../services/open-weather.service';
 
 @Component({
   selector: 'app-weather-information',
@@ -8,6 +11,10 @@ import { OpenWeatherService } from '../services/open-weather.service';
   styleUrls: ['./weather-information.component.scss'],
 })
 export class WeatherInformationComponent implements OnInit {
+  public get state(): ICoordinates {
+    return this.openWeatherService.state;
+  }
+
   constructor(
     public dialogRef: MatDialogRef<WeatherInformationComponent>,
     private openWeatherService: OpenWeatherService
