@@ -1,6 +1,7 @@
 import { MapsAPILoader } from '@agm/core';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { OpenWeatherService } from '../services/open-weather.service';
 import { WeatherInformationComponent } from '../weather-information/weather-information.component';
 
 @Component({
@@ -14,7 +15,8 @@ export class WeatherMapComponent implements OnInit {
 
   constructor(
     private mapsAPILoader: MapsAPILoader,
-    public matDialog: MatDialog
+    public matDialog: MatDialog,
+    private openWeatherService: OpenWeatherService
   ) {}
 
   ngOnInit(): void {
@@ -25,12 +27,7 @@ export class WeatherMapComponent implements OnInit {
     console.table(event.coords);
     this.lat = event.coords.lat;
     this.lng = event.coords.lng;
-  }
 
-  openDialog() {
-    const dialogRef = this.matDialog.open(WeatherInformationComponent, {
-      height: '400px',
-      width: '600px',
-    });
+    this.openWeatherService.openDialog(this.lat, this.lng);
   }
 }

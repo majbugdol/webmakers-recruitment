@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
+import { OpenWeatherService } from '../services/open-weather.service';
 
 @Component({
   selector: 'app-weather-information',
@@ -7,7 +8,10 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./weather-information.component.scss'],
 })
 export class WeatherInformationComponent implements OnInit {
-  constructor(public dialogRef: MatDialogRef<WeatherInformationComponent>) {}
+  constructor(
+    public dialogRef: MatDialogRef<WeatherInformationComponent>,
+    private openWeatherService: OpenWeatherService
+  ) {}
 
   ngOnInit(): void {}
 }
