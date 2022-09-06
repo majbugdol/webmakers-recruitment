@@ -10,7 +10,7 @@ export class WeatherMapComponent implements OnInit {
   lat: number = 50.265252093435215;
   lng: number = 19.02180235179187;
 
-  constructor(private mapsAPILoader: MapsAPILoader, private ngZone: NgZone) {}
+  constructor(private mapsAPILoader: MapsAPILoader) {}
 
   ngOnInit(): void {
     this.mapsAPILoader.load().then(() => {});
