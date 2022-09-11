@@ -23,10 +23,9 @@ export class WeatherMapComponent implements OnInit {
   }
 
   onMapClick(event: any) {
-    console.table(event.coords);
     this.lat = event.coords.lat;
     this.lng = event.coords.lng;
 
-    this.openWeatherService.openDialog(this.lat, this.lng);
+    this.openWeatherService.openModal(this.lat, this.lng);
   }
 }

@@ -17,7 +17,7 @@ export class OpenWeatherService {
 
   constructor(public matDialog: MatDialog) {}
 
-  openDialog(lat: number, lng: number) {
+  openModal(lat: number, lng: number) {
     this.matDialog.open(WeatherInformationComponent, {
       height: '400px',
       width: '600px',
@@ -27,4 +27,6 @@ export class OpenWeatherService {
     this.state.lng = lng;
     console.log(this.state);
   }
+
+  getWeather() {}
 }
